@@ -7,10 +7,10 @@ sudo cp wallpaper/wallpaper.jpg /usr/share/backgrounds/cnzn/wallpaper.jpg
 
 sudo pacman -Syu
 
-sudo pacman -S gvfs pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf  pulseaudio-bluetooth nano thunar mpv dconf dunst zsh xorg-xrandr brightnessctl bluez blueman hsetroot sxhkd picom ttf-jetbrains-mono network-manager-applet xorg-xsetroot pavucontrol python-setuptools xorg-server xorg-xinit
+sudo pacman -S upower gvfs pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf  pulseaudio-bluetooth nano thunar mpv dconf dunst zsh xorg-xrandr brightnessctl bluez blueman hsetroot sxhkd picom ttf-jetbrains-mono network-manager-applet xorg-xsetroot pavucontrol python-setuptools xorg-server xorg-xinit
 
-sudo systemctl enable bluetooth NetworkManager
-sudo systemctl start bluetooth NetworkManager
+sudo systemctl enable bluetooth NetworkManager upower
+sudo systemctl start bluetooth NetworkManager upower
 
 mkdir -p AURPackages
 cd AURPackages
