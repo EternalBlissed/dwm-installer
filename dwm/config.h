@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-
+#include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 1;        /* gaps between windows */
@@ -25,15 +25,25 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-	"hsetroot", "-cover", "/usr/share/backgrounds/cnzn/wallpaper.jpg", NULL,
-	"sh", "-c", "while true; do xsetroot -name \"$(date +%I:%M) $(brightnessctl g | awk '{printf \"%d%%\", $1*100/$(brightnessctl m)}')\"; sleep 1; done", NULL,
-	"volctl", NULL,
-	"nm-applet", NULL,
-	"blueman-applet", NULL,
-	"picom", NULL,
-	"sxhkd", NULL,
-	NULL
+    "hsetroot", "-cover", "/usr/share/backgrounds/cnzn/wallpaper.jpg", NULL,
+    "sh", "-c", 
+    "while true; do \
+        xsetroot -name \"Time: $(date +%I:%M) \
+        Brightness: $(brightnessctl g | awk '{printf \"%d%%\", $1*100/$(brightnessctl m)}') \
+        Power: $(cat /sys/class/power_supply/BAT0/capacity)%%\"; \
+        sleep 1; \
+    done", 
+    NULL,
+    "volctl", NULL,
+    "nm-applet", NULL,
+    "blueman-applet", NULL,
+    "picom", NULL,
+    "sxhkd", NULL,
+    NULL
 };
+
+static const char *brupcmd[] = { "brightnessctl", "set", "10%+", NULL };
+static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -79,8 +89,8 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_F11,    spawn,          SHCMD("brightnessctl set 5%-") },
-	{ MODKEY,                       XK_F12,    spawn,          SHCMD("brightnessctl set +5%") },
+	{ 0, XF86XK_MonBrightnessUp,  spawn,          {.v = brupcmd} },
+	{ 0, XF86XK_MonBrightnessDown, spawn,          {.v = brdowncmd} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
