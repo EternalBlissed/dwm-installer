@@ -12,9 +12,6 @@ sudo pacman -S pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf  p
 sudo systemctl enable bluetooth NetworkManager
 sudo systemctl start bluetooth NetworkManager
 
-echo "Make sure to change the shell :3"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 mkdir -p AURPackages
 cd AURPackages
 
@@ -55,6 +52,10 @@ echo 'exec dwm
 xrandr --output eDP-1 --mode 1920x1080
 xrandr --output DP-1 --mode 1920x1080 --right-of eDP-1
 ' > .xinitrc 
+
+echo 'alias codium=code
+alias nvim=vim
+' > .zshrc
 
 mkdir ~/.config/gtk-3.0
 
