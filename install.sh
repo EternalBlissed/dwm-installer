@@ -31,7 +31,7 @@ git clone https://aur.archlinux.org/volctl.git
 cd volctl && makepkg -si
 
 # Change from ../dwm to dwm if above is commented out
-cd ../dwm && sudo make install
+cd dwm && sudo make install
 sudo make clean
 
 cd ../st && sudo make install
