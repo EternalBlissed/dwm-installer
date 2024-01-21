@@ -30,8 +30,8 @@ fi
 
 # Create necessary directories and copy the wallpaper
 mkdir -p $HOME/.config/
-sudo mkdir -p /usr/share/backgrounds/cnzn/
-sudo cp wallpaper/wallpaper.jpg /usr/share/backgrounds/cnzn/wallpaper.jpg
+sudo mkdir -p /usr/share/backgrounds/eternals-dwm/
+sudo cp wallpaper/wallpaper.jpg /usr/share/backgrounds/eternals-dwm/wallpaper.jpg
 
 # Update the system and install necessary packages
 sudo pacman -Syu
