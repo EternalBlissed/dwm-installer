@@ -17,6 +17,7 @@ chmod +x ./install.sh
 
 ## Screenshots
 ![Screenshot](https://i.ibb.co/48s2z9g/Screenshot-2024-01-21-16-31-35.png)
+![Screenshot](https://i.ibb.co/px4CS4B/Screenshot-2024-01-21-17-57-14.png)
 
 ## List of all programs & optional programs
 
