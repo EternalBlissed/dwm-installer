@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
     "hsetroot", "-cover", "/usr/share/backgrounds/cnzn/wallpaper.jpg", NULL,
-    "sh", "-c", "while true; do mem=$(free -m | awk '/^Mem:/ {printf \"%d/%dMB\", $3, $2}'); read cpu a b c d e f g h i j < /proc/stat; prev_idle=$d; prev_total=$(($a+$b+$c+$d+$e+$f+$g+$h+$i+$j)); sleep 1; read cpu a b c d e f g h i j < /proc/stat; total=$(($a+$b+$c+$d+$e+$f+$g+$h+$i+$j)); cpu_usage=$((100*( (total-prev_total) - (d-prev_idle) ) / (total-prev_total) )); xsetroot -name \"Time: $(date +%I:%M) RAM: $mem CPU: ${cpu_usage}% Brightness: $(brightnessctl g | awk -v max=$(brightnessctl m) '{printf \"%d%%\", $1*100/max}') Battery: $(cat /sys/class/power_supply/BAT0/capacity)%\"; done", NULL,
+    "sh", "-c", "while true; do mem=$(free -m | awk '/^Mem:/ {printf \"%d/%dMB\", $3, $2}'); read cpu a b c d e f g h i j < /proc/stat; prev_idle=$d; prev_total=$(($a+$b+$c+$d+$e+$f+$g+$h+$i+$j)); sleep 1; read cpu a b c d e f g h i j < /proc/stat; total=$(($a+$b+$c+$d+$e+$f+$g+$h+$i+$j)); cpu_usage=$((100*( (total-prev_total) - (d-prev_idle) ) / (total-prev_total) )); battery=$(cat /sys/class/power_supply/BAT0/capacity); charging=''; if grep -qi 'charging' /sys/class/power_supply/BAT0/status; then charging=' (Charging)'; fi; xsetroot -name \"Time: $(date +%I:%M) RAM: $mem CPU: ${cpu_usage}% Brightness: $(brightnessctl g | awk -v max=$(brightnessctl m) '{printf \"%d%%\", $1*100/max}') Battery: ${battery}%$charging\"; done", NULL,
     "volctl", NULL,
     "nm-applet", NULL,
     "blueman-applet", NULL,
