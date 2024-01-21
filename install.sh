@@ -35,7 +35,7 @@ sudo cp wallpaper/wallpaper.jpg /usr/share/backgrounds/cnzn/wallpaper.jpg
 
 # Update the system and install necessary packages
 sudo pacman -Syu
-sudo pacman -S j4-dmenu-desktop upower gvfs pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf  pulseaudio-bluetooth nano thunar mpv dconf dunst zsh xorg-xrandr brightnessctl bluez blueman hsetroot sxhkd picom ttf-jetbrains-mono network-manager-applet xorg-xsetroot pavucontrol python-setuptools xorg-server xorg-xinit zsh-completions
+sudo pacman -S j4-dmenu-desktop upower gvfs pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf pulseaudio-bluetooth nano thunar mpv dconf dunst zsh xorg-xrandr brightnessctl bluez blueman hsetroot sxhkd picom ttf-jetbrains-mono network-manager-applet xorg-xsetroot pavucontrol python-setuptools xorg-server xorg-xinit zsh-completions
 
 # Enable and start necessary services
 sudo systemctl enable bluetooth NetworkManager upower
@@ -53,7 +53,9 @@ echo "Would you like to install extra tools (vscodium, obsidian-bin, screenfetch
 read -r install_extra
 
 if [ "$install_extra" = "y" ]; then
-    trizen -S vscodium-bin obsidian-bin screenfetch rustup go audacity btop intel-ucode neovim nasm docker docker-compose tree pacman-contrib nodejs npm unzip
+    trizen -S vscodium-bin obsidian-bin screenfetch rustup go audacity btop cava intel-ucode neovim nasm docker docker-compose tree pacman-contrib nodejs npm unzip
+    cp -r btop/ $HOME/.config/
+    cp -r cava/ $HOME/.config/
 fi
 
 clear
