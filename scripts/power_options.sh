@@ -3,8 +3,13 @@
 # Define the options
 options="Logout\nShutdown\nReboot\nSuspend\nHibernate"
 
-# Use dmenu to select an option
-selected=$(echo -e $options | dmenu -i -p "Power Menu: ")
+# Function to prompt for choice in st
+prompt_choice() {
+    st -e sh -c "echo -e '$1' && read -p 'Enter your choice: ' choice && echo \$choice"
+}
+
+# Use st to select an option
+selected=$(prompt_choice "$options")
 
 # Execute the selected option
 case $selected in
@@ -23,5 +28,8 @@ case $selected in
         ;;
     Hibernate)
         systemctl hibernate
+        ;;
+    *)
+        echo "Invalid option: $selected"
         ;;
 esac
