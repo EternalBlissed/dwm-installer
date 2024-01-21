@@ -105,6 +105,7 @@ gtk-xft-hintstyle=hintfull' > ~/.config/gtk-3.0/settings.ini
 
 # Clean up package cache
 trizen -Scc
+sudo pacman -Rns $(pacman -Qdtq)
 
 echo "Finished, Please Reboot after changing your shell"
 
