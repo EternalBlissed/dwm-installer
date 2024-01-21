@@ -21,6 +21,7 @@ git clone https://aur.archlinux.org/trizen
 cd trizen && makepkg -si
 
 # Prompt for optional tool installation
+clear
 echo "Would you like to install extra tools (vscodium, obsidian-bin, screenfetch, rustup, go, audacity, btop, intel-ucode, neovim, nasm, docker, docker-compose, tree, pacman-contrib, nodejs, npm, unzip)? (y/n)"
 read -r install_extra
 
@@ -28,6 +29,7 @@ if [ "$install_extra" = "y" ]; then
     trizen -S vscodium-bin obsidian-bin screenfetch rustup go audacity btop intel-ucode neovim nasm docker docker-compose tree pacman-contrib nodejs npm unzip
 fi
 
+clear
 # Prompt for optional tool installation
 echo "Do you have a nvidia GPU? (y/n)"
 read -r install_gpu
@@ -49,7 +51,7 @@ git clone https://aur.archlinux.org/volctl.git
 cd volctl && makepkg -si
 
 # Install window manager and related tools
-cd ../dwm && sudo make install
+cd ../../dwm && sudo make install
 sudo make clean
 
 cd ../st && sudo make install
@@ -61,6 +63,7 @@ cp -r dunst/ $HOME/.config/
 chmod +x $HOME/.config/dunst/launch.sh
 
 # ROFI
+mkdir ~/.local/share/rofi/themes                                                                                    
 cp -r rofi/config $HOME/.config/
 cp -r rofi/local/share/rofi/themes $HOME/.local/share/rofi/themes
 
