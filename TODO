@@ -1,3 +1,1 @@
-- Fix Dmenu colors to be themed with dwm
-- If the brightnessctl script is fucked, fix it by manually compiling dwm
-- Fix any syntax issues that are there that i've not noticed
+- Power options menu in bar
