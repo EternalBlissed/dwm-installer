@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
     "hsetroot", "-cover", "/usr/share/backgrounds/cnzn/wallpaper.jpg", NULL,
-    "sh", "-c", "while true; do max_brightness=$(brightnessctl m); xsetroot -name \"Time: $(date +%I:%M) Brightness: $(brightnessctl g | awk -v max=$max_brightness '{printf \"%d%%\", $1*100/max}') Battery: $(cat /sys/class/power_supply/BAT0/capacity)%\"; sleep 1; done", NULL,
+    "sh", "-c", "while true; do mem=$(free -m | awk '/^Mem:/ {printf \"%d/%dMB\", $3, $2}'); cpu=$(awk -v prev_idle=$(awk '/^cpu / {print $5}' /proc/stat) -v prev_total=$(awk '/^cpu / {sum=0; for (i=2; i<=8; i++) {sum += $i} print sum}' /proc/stat) 'BEGIN {sleep 0.5} /^cpu / {sum=0; for (i=2; i<=8; i++) {sum += $i} print int(((sum-prev_total) - ($5-prev_idle)) / (sum-prev_total) * 100) }' /proc/stat); xsetroot -name \"Time: $(date +%I:%M) RAM: $mem CPU: ${cpu}% Brightness: $(brightnessctl g | awk -v max=$(brightnessctl m) '{printf \"%d%%\", $1*100/max}') Battery: $(cat /sys/class/power_supply/BAT0/capacity)%\"; sleep 1; done", NULL,
     "volctl", NULL,
     "nm-applet", NULL,
     "blueman-applet", NULL,
