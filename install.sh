@@ -49,11 +49,11 @@ cd trizen && makepkg -si
 
 # Prompt for optional tool installation
 clear
-echo "Would you like to install extra tools (vscodium, obsidian-bin, screenfetch, rustup, go, audacity, btop, intel-ucode, neovim, nasm, docker, docker-compose, tree, pacman-contrib, nodejs, npm, unzip)? (y/n)"
+echo "Would you like to install extra tools (vscodium, obsidian-bin, screenfetch, rustup, go, audacity, btop, intel-ucode, neovim, nasm, docker, docker-compose, tree, pacman-contrib, nodejs, npm, unzip, vesktop)? (y/n)"
 read -r install_extra
 
 if [ "$install_extra" = "y" ]; then
-    trizen -S vscodium-bin obsidian-bin screenfetch rustup go audacity btop cava intel-ucode neovim nasm docker docker-compose tree pacman-contrib nodejs npm unzip
+    trizen -S vscodium-bin obsidian-bin screenfetch rustup go audacity btop cava intel-ucode neovim nasm docker docker-compose tree pacman-contrib nodejs npm unzip vesktop
     cp -r btop/ $HOME/.config/
     cp -r cava/ $HOME/.config/
 fi
