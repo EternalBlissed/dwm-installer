@@ -94,6 +94,9 @@ cd ../ && cp -r sxhkd/ $HOME/.config/
 cp -r dunst/ $HOME/.config/
 chmod +x $HOME/.config/dunst/launch.sh
 
+# Config Scripts
+cp -r scripts/ $HOME/scripts
+
 # Set up .xinitrc
 cd $HOME && touch .xinitrc
 echo 'exec dwm
