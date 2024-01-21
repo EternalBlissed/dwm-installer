@@ -68,9 +68,9 @@ chmod +x $HOME/.config/dunst/launch.sh
 # Set up .xinitrc
 cd $HOME && touch .xinitrc
 echo 'exec dwm
-./$HOME/.config/dunst/launch.sh
 xrandr --output eDP-1 --mode 1920x1080
 xrandr --output DP-1 --mode 1920x1080 --right-of eDP-1
+$HOME/.config/dunst/launch.sh
 ' > .xinitrc 
 
 
