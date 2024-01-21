@@ -13,9 +13,83 @@ chmod +x ./install.sh
 - This script has only been tested with an archinstall minimal profile installed with no audio driver selected.
 - I highly, highly recommend forking this and modding it to your liking.
 - If you fork it, you should expect to deal with c and bash.
+- This is not finished, there will be bugs, missing features and more
 
 ## Screenshots
 ![Screenshot](https://i.ibb.co/48s2z9g/Screenshot-2024-01-21-16-31-35.png)
+
+## List of all programs & optional programs
+
+### Arch Linux Official Repositories (via pacman):
+- `xfce4-screenshooter`
+- `j4-dmenu-desktop`
+- `upower`
+- `gvfs`
+- `pulseaudio`
+- `pulseaudio-alsa`
+- `pulseaudio-jack`
+- `pulseaudio-zeroconf`
+- `pulseaudio-bluetooth`
+- `nano`
+- `thunar`
+- `mpv`
+- `dconf`
+- `dunst`
+- `zsh`
+- `xorg-xrandr`
+- `brightnessctl`
+- `bluez`
+- `blueman`
+- `hsetroot`
+- `sxhkd`
+- `picom`
+- `ttf-jetbrains-mono`
+- `network-manager-applet`
+- `xorg-xsetroot`
+- `pavucontrol`
+- `python-setuptools`
+- `xorg-server`
+- `xorg-xinit`
+- `zsh-completions`
+- `nvidia-dkms` (optional, for Nvidia GPU)
+
+### AUR (Arch User Repository) via Trizen:
+- `vscodium-bin` (optional)
+- `obsidian-bin` (optional)
+- `screenfetch` (optional)
+- `rustup` (optional)
+- `go` (optional)
+- `audacity` (optional)
+- `btop` (optional)
+- `cava` (optional)
+- `intel-ucode` (optional)
+- `neovim` (optional)
+- `nasm` (optional)
+- `docker` (optional)
+- `docker-compose` (optional)
+- `tree` (optional)
+- `pacman-contrib` (optional)
+- `nodejs` (optional)
+- `npm` (optional)
+- `unzip` (optional)
+- `catppuccin-gtk-theme-mocha`
+- `papirus-icon-theme-git`
+- `adwaita-cursors-git`
+- `librewolf-bin` (with `--skipinteg`)
+- `python-pulsectl`
+- `volctl`
+
+### Other Installations and Configurations:
+- DWM window manager (from a local repository)
+- DMenu (from a local repository)
+- Simple Terminal (ST) (from a local repository)
+- Configuration for `sxhkd`, `dunst`, `btop`, `cava`
+- Configuration for `GTK` settings
+- Installation of `Oh My Zsh` for `zsh` customization (WIP)
+
+### Note:
+- The script also performs system updates, service enablement, directory creation, file copying, and other configurations that are not package installations per se.
+
 
 ## Keybinds
 
