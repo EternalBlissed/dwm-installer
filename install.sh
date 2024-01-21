@@ -1,6 +1,33 @@
 #! /bin/bash
 set -e
 
+#!/bin/bash
+
+cat <<'EOF'
+      ..      .          s                                                            ..    .x+=:.             ....               ...    .     ...          ...     ..      ..     
+   x88f` `..x88. .>     :8                                                      x .d88"    z`    ^%        .xH888888Hx.        .~`"888x.!**h.-``888h.     x*8888x.:*8888: -"888:   
+ :8888   xf`*8888%     .88                  .u    .      u.    u.                5888R        .   <k     .H8888888888888:     dX   `8888   :X   48888>   X   48888X `8888H  8888   
+:8888f .888  `"`      :888ooo      .u     .d88B :@8c   x@88k u@88c.       u      '888R      .@8Ned8"     888*"""?""*88888X   '888x  8888  X88.  '8888>  X8x.  8888X  8888X  !888>  
+88888' X8888. >"8x  -*8888888   ud8888.  ="8888f8888r ^"8888""8888"    us888u.    888R    .@^%8888"     'f     d8x.   ^%88k  '88888 8888X:8888:   )?""` X8888 X8888  88888   "*8%- 
+88888  ?88888< 888>   8888    :888'8888.   4888>'88"    8888  888R  .@88 "8888"   888R   x88:  `)8b.    '>    <88888X   '?8   `8888>8888 '88888>.88h.   '*888!X8888> X8888  xH8>   
+88888   "88888 "8%    8888    d888 '88%"   4888> '      8888  888R  9888  9888    888R   8888N=*8888     `:..:`888888>    8>    `8" 888f  `8888>X88888.   `?8 `8888  X888X X888>   
+88888 '  `8888>       8888    8888.+"      4888>        8888  888R  9888  9888    888R    %8"    R88            `"*88     X    -~` '8%"     88" `88888X   -^  '888"  X888  8888>   
+`8888> %  X88!       .8888Lu= 8888L       .d888L .+     8888  888R  9888  9888    888R     @8Wou 9%        .xHHhx.."      !    .H888n.      XHn.  `*88!    dx '88~x. !88~  8888>   
+ `888X  `~""`   :    ^%888*   '8888c. .+  ^"8888*"     "*88*" 8888" 9888  9888   .888B . .888888P`        X88888888hx. ..!    :88888888x..x88888X.  `!   .8888Xf.888x:!    X888X.: 
+   "88k.      .~       'Y"     "88888%       "Y"         ""   'Y"   "888*""888"  ^*888%  `   ^"F         !   "*888888888"     f  ^%888888% `*88888nx"   :""888":~"888"     `888*"  
+     `""*==~~`                   "YP'                                ^Y"   ^Y'     "%"                           ^"***"`            `"**"`    `"**""         "~'    "~        ""    
+EOF
+
+# Warning message and proceed prompt
+echo "WARNING: This script has only been tested with an archinstall minimal profile with no audio driver selected. Proceed with caution."
+echo "Do you want to proceed? (y/n)"
+read -r proceed
+
+if [ "$proceed" != "y" ]; then
+    echo "Script aborted."
+    exit 1
+fi
+
 # Create necessary directories and copy the wallpaper
 mkdir -p $HOME/.config/
 sudo mkdir -p /usr/share/backgrounds/cnzn/
