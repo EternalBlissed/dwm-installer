@@ -63,7 +63,7 @@ cp -r dunst/ $HOME/.config/
 chmod +x $HOME/.config/dunst/launch.sh
 
 # ROFI
-mkdir ~/.local/share/rofi/themes                                                                                    
+mkdir -p ~/.local/share/rofi/themes                                                                                    
 cp -r rofi/config $HOME/.config/
 cp -r rofi/local/share/rofi/themes $HOME/.local/share/rofi/themes
 
