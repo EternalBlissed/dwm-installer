@@ -54,6 +54,9 @@ cd volctl && makepkg -si
 cd ../../dwm && sudo make install
 sudo make clean
 
+cd ../dmenu && sudo make install
+sudo make clean
+
 cd ../st && sudo make install
 sudo make clean
 
@@ -61,11 +64,6 @@ sudo make clean
 cd ../ && cp -r sxhkd/ $HOME/.config/ 
 cp -r dunst/ $HOME/.config/
 chmod +x $HOME/.config/dunst/launch.sh
-
-# ROFI
-mkdir -p ~/.local/share/rofi/themes                                                                                    
-cp -r rofi/config $HOME/.config/
-cp -r rofi/local/share/rofi/themes $HOME/.local/share/rofi/themes
 
 # Set up .xinitrc
 cd $HOME && touch .xinitrc
@@ -75,10 +73,6 @@ xrandr --output eDP-1 --mode 1920x1080
 xrandr --output DP-1 --mode 1920x1080 --right-of eDP-1
 ' > .xinitrc 
 
-# Set up .zshrc
-echo 'alias codium=code
-alias nvim=vim
-' > .zshrc
 
 # Configure GTK settings
 mkdir ~/.config/gtk-3.0
@@ -105,3 +99,8 @@ echo "Finished, Please Reboot after changing your shell"
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Set up .zshrc
+echo 'alias codium=code
+alias nvim=vim
+' > .zshrc
