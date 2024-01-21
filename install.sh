@@ -73,6 +73,17 @@ xrandr --output DP-1 --mode 1920x1080 --right-of eDP-1
 $HOME/.config/dunst/launch.sh
 ' > .xinitrc 
 
+# Create a .desktop file for st
+mkdir -p $HOME/.local/share/applications/
+echo '[Desktop Entry]
+Type=Application
+Name=Simple Terminal (st)
+Comment=Simple Terminal (st)
+Exec=st
+Terminal=false
+Categories=System;TerminalEmulator;' > $HOME/.local/share/applications/st.desktop
+
+update-desktop-database $HOME/.local/share/applications/
 
 # Configure GTK settings
 mkdir ~/.config/gtk-3.0
