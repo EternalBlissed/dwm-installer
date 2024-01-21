@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
     "hsetroot", "-cover", "/usr/share/backgrounds/cnzn/wallpaper.jpg", NULL,
-    "sh", "-c", "while true; do max_brightness=$(brightnessctl m); xsetroot -name \"$(date +%I:%M) \\uF0EB $(brightnessctl g | awk -v max=$max_brightness '{printf \"%d%%\", $1*100/max}') \\uF240 $(cat /sys/class/power_supply/BAT0/capacity)%\"; sleep 1; done", NULL,
+    "sh", "-c", "-e" "while true; do max_brightness=$(brightnessctl m); xsetroot -name \"\uf017 $(date +%I:%M) \uf185 $(brightnessctl g | awk -v max=$max_brightness '{printf \"%d%%\", $1*100/max}') \uf240 Battery: $(cat /sys/class/power_supply/BAT0/capacity)%\"; sleep 1; done", NULL,
     "volctl", NULL,
     "nm-applet", NULL,
     "blueman-applet", NULL,
