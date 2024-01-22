@@ -76,7 +76,7 @@ chmod +x ./install.sh
 - `catppuccin-gtk-theme-mocha`
 - `papirus-icon-theme-git`
 - `adwaita-cursors-git`
-- `librewolf-bin` (with `--skipinteg`)
+- `floorp browser`
 - `python-pulsectl`
 - `volctl`
 
