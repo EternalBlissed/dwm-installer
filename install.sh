@@ -69,7 +69,7 @@ fi
 
 # Continue with other installations
 trizen -S catppuccin-gtk-theme-mocha papirus-icon-theme-git adwaita-cursors-git
-trizen -S --skipinteg librewolf-bin
+trizen -S --skipinteg floorp-bin
 
 cd ../
 git clone https://aur.archlinux.org/python-pulsectl.git
