@@ -46,6 +46,7 @@ mkdir -p AURPackages
 cd AURPackages
 git clone https://aur.archlinux.org/trizen
 cd trizen && makepkg -si
+cd ../
 
 # Prompt for optional tool installation
 clear
