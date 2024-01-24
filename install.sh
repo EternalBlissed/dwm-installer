@@ -81,7 +81,7 @@ git clone https://aur.archlinux.org/volctl.git
 cd volctl && makepkg -si
 
 # Install window manager and related tools
-cd ../../dwm && sudo make install
+cd ../dwm && sudo make install
 sudo make clean
 
 cd ../dmenu && sudo make install
