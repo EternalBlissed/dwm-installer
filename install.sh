@@ -54,8 +54,8 @@ read -r install_extra
 
 if [ "$install_extra" = "y" ]; then
     trizen -S vscodium-bin obsidian-bin screenfetch rustup go audacity btop cava intel-ucode neovim nasm docker docker-compose tree pacman-contrib nodejs npm unzip vesktop-bin
-    cp -r btop/ $HOME/.config/
-    cp -r cava/ $HOME/.config/
+    cp -r ../btop/ $HOME/.config/
+    cp -r ../cava/ $HOME/.config/
 fi
 
 clear
