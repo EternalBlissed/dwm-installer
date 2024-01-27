@@ -35,7 +35,7 @@ sudo cp wallpaper/wallpaper.jpg /usr/share/backgrounds/eternals-dwm/wallpaper.jp
 
 # Update the system and install necessary packages
 sudo pacman -Syu
-sudo pacman -S gcc make fakeroot xfce4-screenshooter j4-dmenu-desktop upower gvfs pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf pulseaudio-bluetooth nano thunar mpv dconf dunst zsh xorg-xrandr brightnessctl bluez blueman hsetroot sxhkd picom ttf-jetbrains-mono network-manager-applet xorg-xsetroot pavucontrol python-setuptools xorg-server xorg-xinit zsh-completions
+sudo pacman -S pkg-conf gcc make fakeroot xfce4-screenshooter j4-dmenu-desktop upower gvfs pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-zeroconf pulseaudio-bluetooth nano thunar mpv dconf dunst zsh xorg-xrandr brightnessctl bluez blueman hsetroot sxhkd picom ttf-jetbrains-mono network-manager-applet xorg-xsetroot pavucontrol python-setuptools xorg-server xorg-xinit zsh-completions
 
 # Enable and start necessary services
 sudo systemctl enable bluetooth NetworkManager upower
