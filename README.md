@@ -2,7 +2,7 @@
 
 ### Install (If you want to for some reason)
 ```
-git clone "https://github.com/eternalblissed/DWM-Install"
+git clone "https://github.com/EternalBlissed/dwm-installer"
 cd DWM-Install
 chmod +x ./install.sh
 ./install.sh
